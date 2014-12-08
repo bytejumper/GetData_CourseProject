@@ -14,151 +14,120 @@ The raw data is separated into several files and into two groups: test and train
 The goal of the data manipulation is to bring the test and training data sets together into one and calculate the average measurements of each mean and standard deviation calculated in the raw data.
 
 Codebook:
-activity -- factor
-    description of the activity performed during the study
-        LAYING
-        SITTING
-        STANDING
-        WALKING
-        WALKING_DOWNSTAIRS
-        WALKING_UPSTAIRS
-
-subjectID -- integer
-    identifier for each subject in the study
-        1 - 30
-
-tBodyAcc-mean()-X ; tBodyAcc-mean()-Y ; tBodyAcc-mean()-Z -- numeric
-     average time measurement of the body's acceleration along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-tBodyAcc-std()-X ; tBodyAcc-std()-Y ; tBodyAcc-std()-Z -- numeric
-     standard deviation of time measurement of the body's acceleration along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-tGravityAcc-mean()-X ; tGravityAcc-mean()-Y ; tGravityAcc-mean()-Z -- numeric
-     average time measurement of gravity's acceleration along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-tGravityAcc-std()-X ; tGravityAcc-std()-Y ; tGravityAcc-std()-Z -- numeric
-     standard deviation of time measurement of gravity's acceleration along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-tBodyAccJerk-mean()-X ; tBodyAccJerk-mean()-Y ; tBodyAccJerk-mean()-Z -- numeric
-     average time measurement of the body's acceleration jerks along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-tBodyAccJerk-std()-X ; tBodyAccJerk-std()-Y ; tBodyAccJerk-std()-Z -- numeric
-     standard deviation of time measurement of the body's acceleration along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-tBodyGyro-mean()-X ; tBodyGyro-mean()-Y ; tBodyGyro-mean()-Z -- numeric
-     average time measurement of the body's angular velocity along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-tBodyGyro-std()-X ; tBodyGyro-std()-Y ; tBodyGyro-std()-Z -- numeric
-     standard deviation of time measurement of the body's angular velocity along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-tBodyGyroJerk-mean()-X ; tBodyGyroJerk-mean()-Y ; tBodyGyroJerk-mean()-Z -- numeric
-     average time measurement of the body's angular velocity jerks along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-tBodyGyroJerk-std()-X t; BodyGyroJerk-std()-Y ; tBodyGyroJerk-std()-Z -- numeric
-     standard deviation of time measurement of the body's angular velocity jerks along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-tBodyAccMag-mean() -- numeric
-     average time measurement of the magnitude of the body's acceleration
-        ranges from -1 to 1
-
-tBodyAccMag-std() -- numeric
-     standard deviation of time measurement of the magnitude of the body's acceleration
-        ranges from -1 to 1
-
-tGravityAccMag-mean() -- numeric
-     average time measurement of the magnitude of gravity's acceleration
-        ranges from -1 to 1
-
-tGravityAccMag-std() -- numeric
-     standard deviation of time measurement of the magnitude of gravity's acceleration
-        ranges from -1 to 1
-
-tBodyAccJerkMag-mean() -- numeric
-     average time measurement of the magnitude of the body's acceleration jerks
-        ranges from -1 to 1
-
-tBodyAccJerkMag-std() -- numeric
-     standard deviation time measurement of the magnitude of the body's acceleration jerks
-        ranges from -1 to 1
-
-tBodyGyroMag-mean() -- numeric
-     average time measurement of the magnitude of the body's angular velocity
-        ranges from -1 to 1
-
-tBodyGyroMag-std() -- numeric
-     standard deviation of time measurement of the magnitude of the body's angular velocity
-        ranges from -1 to 1
-
-tBodyGyroJerkMag-mean() -- numeric
-     average time measurement of the magnitude of the body's angular velocity jerks along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-tBodyGyroJerkMag-std() -- numeric
-     standard deviation of time measurement of the magnitude of the body's angular velocity jerks
-        ranges from -1 to 1
-
-fBodyAcc-mean()-X ; fBodyAcc-mean()-Y ; fBodyAcc-mean()-Z -- numeric
-     average frequency measurement of the body's acceleration along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-fBodyAcc-std()-X ; fBodyAcc-std()-Y ; fBodyAcc-std()-Z -- numeric
-     standard deviation of frequency measurement of the body's acceleration along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-fBodyAccJerk-mean()-X ; fBodyAccJerk-mean()-Y ; fBodyAccJerk-mean()-Z -- numeric
-     average frequency measurement of the body's acceleration jerks along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-fBodyAccJerk-std()-X ; fBodyAccJerk-std()-Y ; fBodyAccJerk-std()-Z -- numeric
-     standard deviation of frequency measurement of the body's acceleration jerks along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-fBodyGyro-mean()-X ; fBodyGyro-mean()-Y ; fBodyGyro-mean()-Z -- numeric
-     average frequency measurement of the body's angular velocity along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-fBodyGyro-std()-X ; fBodyGyro-std()-Y ; fBodyGyro-std()-Z -- numeric
-     standard deviation of frequency measurement of the body's angular velocity along the X, Y, and Z axis, respectively
-        ranges from -1 to 1
-
-fBodyAccMag-mean() -- numeric
-     average frequency measurement of the magnitude of the body's acceleration
-        ranges from -1 to 1
-
-fBodyAccMag-std() -- numeric
-     standard deviation of frequency measurement of the magnitude of the body's acceleration
-        ranges from -1 to 1
-
-fBodyBodyAccJerkMag-mean() -- numeric
-     average frequency measurement of the magnitude of the body's acceleration jerks
-        ranges from -1 to 1
-
-fBodyBodyAccJerkMag-std() -- numeric
-     standard deviation of frequency measurement of the magnitude of the body's acceleration jerks
-        ranges from -1 to 1
-
-fBodyBodyGyroMag-mean() -- numeric
-     average frequency measurement of the body's angular velocity jerks
-        ranges from -1 to 1
-
-fBodyBodyGyroMag-std() -- numeric
-     standard deviation of frequency measurement of the body's angular velocity jerks
-        ranges from -1 to 1
-
-fBodyBodyGyroJerkMag-mean() -- numeric
-     average frequency measurement of the magnitude of the body's angular velocity jerks
-        ranges from -1 to 1
-
-fBodyBodyGyroJerkMag-std() -- numeric
-     standard deviation of frequency measurement of the magnitude of the body's angular velocity jerks
-        ranges from -1 to 1
+<ol>
+<li><b>activity</b> -- factor; description of the activity performed during the study
+    <ul>
+    <li>LAYING</li>
+    <li>SITTING</li>
+    <li>STANDING</li>
+    <li>WALKING</li>
+    <li>WALKING_DOWNSTAIRS</li>
+    <li>WALKING_UPSTAIRS</li>
+    </ul>
+</li>
+<li><b>subjectID</b> -- integer; identifier for each subject in the study
+        <ul><li>1 - 30</li></ul>
+</li>
+<li><b>tBodyAcc-mean()-X ; tBodyAcc-mean()-Y ; tBodyAcc-mean()-Z</b> -- numeric; average time measurement of the body's acceleration along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tBodyAcc-std()-X ; tBodyAcc-std()-Y ; tBodyAcc-std()-Z</b> -- numeric; standard deviation of time measurement of the body's acceleration along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tGravityAcc-mean()-X ; tGravityAcc-mean()-Y ; tGravityAcc-mean()-Z</b> -- numeric; average time measurement of gravity's acceleration along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tGravityAcc-std()-X ; tGravityAcc-std()-Y ; tGravityAcc-std()-Z</b> -- numeric; standard deviation of time measurement of gravity's acceleration along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tBodyAccJerk-mean()-X ; tBodyAccJerk-mean()-Y ; tBodyAccJerk-mean()-Z</b> -- numeric; average time measurement of the body's acceleration jerks along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tBodyAccJerk-std()-X ; tBodyAccJerk-std()-Y ; tBodyAccJerk-std()-Z</b> -- numeric; standard deviation of time measurement of the body's acceleration along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tBodyGyro-mean()-X ; tBodyGyro-mean()-Y ; tBodyGyro-mean()-Z</b> -- numeric; average time measurement of the body's angular velocity along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tBodyGyro-std()-X ; tBodyGyro-std()-Y ; tBodyGyro-std()-Z</b> -- numeric; standard deviation of time measurement of the body's angular velocity along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tBodyGyroJerk-mean()-X ; tBodyGyroJerk-mean()-Y ; tBodyGyroJerk-mean()-Z</b> -- numeric; average time measurement of the body's angular velocity jerks along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tBodyGyroJerk-std()-X t; BodyGyroJerk-std()-Y ; tBodyGyroJerk-std()-Z</b> -- numeric; standard deviation of time measurement of the body's angular velocity jerks along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tBodyAccMag-mean()</b> -- numeric; average time measurement of the magnitude of the body's acceleration
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tBodyAccMag-std()</b> -- numeric; standard deviation of time measurement of the magnitude of the body's acceleration
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tGravityAccMag-mean()</b> -- numeric; average time measurement of the magnitude of gravity's acceleration
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tGravityAccMag-std()</b> -- numeric; standard deviation of time measurement of the magnitude of gravity's acceleration
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tBodyAccJerkMag-mean()</b> -- numeric; average time measurement of the magnitude of the body's acceleration jerks
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tBodyAccJerkMag-std()</b> -- numeric; standard deviation time measurement of the magnitude of the body's acceleration jerks
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tBodyGyroMag-mean()</b> -- numeric; average time measurement of the magnitude of the body's angular velocity
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tBodyGyroMag-std()</b> -- numeric; standard deviation of time measurement of the magnitude of the body's angular velocity
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tBodyGyroJerkMag-mean()</b> -- numeric; average time measurement of the magnitude of the body's angular velocity jerks along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>tBodyGyroJerkMag-std()</b> -- numeric; standard deviation of time measurement of the magnitude of the body's angular velocity jerks
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>fBodyAcc-mean()-X ; fBodyAcc-mean()-Y ; fBodyAcc-mean()-Z</b> -- numeric; average frequency measurement of the body's acceleration along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>fBodyAcc-std()-X ; fBodyAcc-std()-Y ; fBodyAcc-std()-Z</b> -- numeric; standard deviation of frequency measurement of the body's acceleration along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>fBodyAccJerk-mean()-X ; fBodyAccJerk-mean()-Y ; fBodyAccJerk-mean()-Z</b> -- numeric; average frequency measurement of the body's acceleration jerks along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>fBodyAccJerk-std()-X ; fBodyAccJerk-std()-Y ; fBodyAccJerk-std()-Z</b> -- numeric; standard deviation of frequency measurement of the body's acceleration jerks along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>fBodyGyro-mean()-X ; fBodyGyro-mean()-Y ; fBodyGyro-mean()-Z</b> -- numeric; average frequency measurement of the body's angular velocity along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>fBodyGyro-std()-X ; fBodyGyro-std()-Y ; fBodyGyro-std()-Z</b> -- numeric; standard deviation of frequency measurement of the body's angular velocity along the X, Y, and Z axis, respectively
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>fBodyAccMag-mean()</b> -- numeric; average frequency measurement of the magnitude of the body's acceleration
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>fBodyAccMag-std()</b> -- numeric; standard deviation of frequency measurement of the magnitude of the body's acceleration
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>fBodyBodyAccJerkMag-mean()</b> -- numeric; average frequency measurement of the magnitude of the body's acceleration jerks
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>fBodyBodyAccJerkMag-std()</b> -- numeric; standard deviation of frequency measurement of the magnitude of the body's acceleration jerks
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>fBodyBodyGyroMag-mean()</b> -- numeric; average frequency measurement of the body's angular velocity jerks
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>fBodyBodyGyroMag-std()</b> -- numeric; standard deviation of frequency measurement of the body's angular velocity jerks
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>fBodyBodyGyroJerkMag-mean()</b> -- numeric; average frequency measurement of the magnitude of the body's angular velocity jerks
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+<li><b>fBodyBodyGyroJerkMag-std()</b> -- numeric; standard deviation of frequency measurement of the magnitude of the body's angular velocity jerks
+        <ul><li>ranges from -1 to 1</li></ul>
+</li>
+</ol>
